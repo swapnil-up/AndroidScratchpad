@@ -32,5 +32,23 @@ class MainActivity : AppCompatActivity() {
         button1.setOnClickListener(){
             alertDialog.show()
         }
+
+        val options= arrayOf("first","second","third")
+        val alertChoiceDialog=AlertDialog.Builder(this)
+            .setTitle("select an option")
+            .setIcon(R.drawable.ic_add_to_group)
+            .setSingleChoiceItems(options,0){dialogInterface,i->
+                Toast.makeText(this,"option ${options[i]} selected",Toast.LENGTH_SHORT).show()
+            }
+            .setPositiveButton("Accept"){_,_->
+                Toast.makeText(this,"Added options",Toast.LENGTH_SHORT).show()
+            }
+            .setNegativeButton("Decline"){_,_->
+                Toast.makeText(this,"Declined adding options",Toast.LENGTH_SHORT).show()
+            }.create()
+
+        button2.setOnClickListener(){
+            alertChoiceDialog.show()
+        }
     }
 }
