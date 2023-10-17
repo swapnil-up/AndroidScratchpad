@@ -50,5 +50,25 @@ class MainActivity : AppCompatActivity() {
         button2.setOnClickListener(){
             alertChoiceDialog.show()
         }
+
+
+        val alertMultiChoiceDialog=AlertDialog.Builder(this)
+            .setTitle("select an option")
+            .setIcon(R.drawable.ic_add_to_group)
+            .setMultiChoiceItems(options, booleanArrayOf(false,false,false)){ _, i, isChecked->
+                if (isChecked) Toast.makeText(this,"added option ${options[i]}",Toast.LENGTH_SHORT).show()
+                else Toast.makeText(this,"removed option ${options[i]}",Toast.LENGTH_SHORT).show()
+
+            }
+            .setPositiveButton("Accept"){_,_->
+                Toast.makeText(this,"Added options",Toast.LENGTH_SHORT).show()
+            }
+            .setNegativeButton("Decline"){_,_->
+                Toast.makeText(this,"Declined adding options",Toast.LENGTH_SHORT).show()
+            }.create()
+
+        button3.setOnClickListener(){
+            alertMultiChoiceDialog.show()
+        }
     }
 }
