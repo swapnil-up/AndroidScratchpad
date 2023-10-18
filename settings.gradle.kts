@@ -16,3 +16,4 @@ dependencyResolutionManagement {
 rootProject.name = "Android Scratchpad"
 include(":app")
 include(":app:alertdialogs")
+include(":app:toasts")
