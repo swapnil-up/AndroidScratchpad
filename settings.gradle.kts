@@ -17,3 +17,4 @@ rootProject.name = "Android Scratchpad"
 include(":app")
 include(":app:alertdialogs")
 include(":app:toasts")
+include(":app:activity")
