@@ -6,6 +6,28 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <EditText
+        android:id="@+id/NameField"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Name"
+        app:layout_constraintBottom_toTopOf="@+id/activity2button"
+        app:layout_constraintEnd_toStartOf="@+id/AgeField"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <EditText
+        android:id="@+id/AgeField"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Age"
+        app:layout_constraintBottom_toTopOf="@+id/activity2button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/NameField"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
@@ -21,7 +43,7 @@
         android:id="@+id/activity2button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Go to Activity 2"
+        android:text="Send to Activity 2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
