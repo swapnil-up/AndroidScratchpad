@@ -9,7 +9,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidScratchpad">
         <activity
-            android:name=".LuckyNumber"
+            android:name=".LuckyNumberActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
