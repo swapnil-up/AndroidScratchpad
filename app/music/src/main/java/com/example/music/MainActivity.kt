@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.SeekBar
 import android.widget.TextView
+import androidx.core.content.ContextCompat
 
 class MainActivity : AppCompatActivity() {
 
@@ -18,6 +19,8 @@ class MainActivity : AppCompatActivity() {
         var songTitle:TextView=findViewById(R.id.songTitle)
         var seekBar:SeekBar=findViewById(R.id.seekBar)
         var pauseButton:Button=findViewById(R.id.pauseButton)
+        var pressed:Boolean=false
+
 
         mediaPlayer=MediaPlayer.create(
             this,
@@ -27,7 +30,16 @@ class MainActivity : AppCompatActivity() {
         seekBar.isClickable=false
 
         pauseButton.setOnClickListener(){
-            mediaPlayer.start()
+            if (!pressed) {
+                mediaPlayer.start()
+                pressed=true
+                pauseButton.background=ContextCompat.getDrawable(this, R.drawable.play)
+            }
+            else{
+                mediaPlayer.pause()
+                pressed=false
+                pauseButton.background=ContextCompat.getDrawable(this, R.drawable.pause)
+            }
         }
     }
 }
